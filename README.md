@@ -468,7 +468,9 @@ Currently the module does not provide any facts. If some facts are required open
 
 This module has been tested on:
 
-* Debian 8
+* Debian 9
+* Debian 10
+* Debian 11
 
 My main distribution is Debian and to support other platforms please let me note the differences,
 that we can append this platform.
