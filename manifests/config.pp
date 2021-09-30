@@ -121,8 +121,10 @@ class pureftpd::config {
     # only notify service if we're managing the service and
     # service restart is enabled.
     if $pureftpd::restart and $pureftpd::service_manage {
-      File["pureftpd-config-${pureftpd::server_type}"] {
-        notify => Service['pureftpd']
+      if defined(File["pureftpd-config-${pureftpd::server_type}"]) {
+        File["pureftpd-config-${pureftpd::server_type}"] {
+          notify => Service['pureftpd']
+        }
       }
       File[$pureftpd::dir_aliases_file] {
         notify => Service['pureftpd']
