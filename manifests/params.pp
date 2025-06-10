@@ -16,7 +16,7 @@ class pureftpd::params {
   $uploadscript    = ''
   $virtualchroot   = false
 
-  case $::osfamily {
+  case $facts['os']['familly'] {
     'Debian': {
       $config_db_dir      = '/etc/pure-ftpd/db'
       $config_dir         = '/etc/pure-ftpd/conf'
