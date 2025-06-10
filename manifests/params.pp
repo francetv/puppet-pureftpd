@@ -70,7 +70,7 @@ class pureftpd::params {
   $default_ssl = {
     'country'      => 'DE',
     'organization' => 'Pure-FTPd Puppet Snakeoil',
-    'commonname'   => $::fqdn,
+    'commonname'   => $facts['networking']['fqdn'],
     'days'         => 3456
   }
 
