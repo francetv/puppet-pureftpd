@@ -16,7 +16,7 @@ class pureftpd::params {
   $uploadscript    = ''
   $virtualchroot   = false
 
-  case $facts['os']['familly'] {
+  case $facts['os']['family'] {
     'Debian': {
       $config_db_dir      = '/etc/pure-ftpd/db'
       $config_dir         = '/etc/pure-ftpd/conf'
@@ -38,7 +38,7 @@ class pureftpd::params {
     }
 
     default: {
-      fail("Unsupported platform: bkuebler-${module_name} currently doesn't support ${::osfamily} or ${::operatingsystem}")
+      fail("Unsupported platform: bkuebler-${module_name} currently doesn't support ${facts['os']['family']}")
     }
 
   }
